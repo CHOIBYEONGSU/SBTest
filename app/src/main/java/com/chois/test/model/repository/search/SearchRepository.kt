@@ -1,11 +1,11 @@
 package com.chois.test.model.repository.search
 
-import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.filter
 import com.chois.spoontest.api.SearchService
+import com.chois.test.global.Constants.Companion.SEARCH_PAGING_SIZE
 import com.chois.test.model.data.Search
 import com.chois.test.view.search.SearchPagingSource
 import kotlinx.coroutines.flow.Flow
@@ -22,7 +22,7 @@ class SearchRepository {
 
             if (searchWord.isNotEmpty() && exceptWord.isNotEmpty()) {
                 return Pager(
-                    config = PagingConfig(pageSize = 10),
+                    config = PagingConfig(pageSize = SEARCH_PAGING_SIZE),
                     pagingSourceFactory = { SearchPagingSource(searchService,
                         searchWord.split("|").toMutableList()
                     ) }

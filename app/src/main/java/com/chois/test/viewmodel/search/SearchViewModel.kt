@@ -1,11 +1,14 @@
 package com.chois.test.viewmodel.search
 
 import android.app.Application
-import androidx.lifecycle.*
-import androidx.paging.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import com.chois.test.R
 import com.chois.test.global.Event
-import com.chois.test.global.showToast
 import com.chois.test.model.data.Search
 import com.chois.test.model.repository.search.SearchRepository
 import kotlinx.coroutines.flow.Flow
