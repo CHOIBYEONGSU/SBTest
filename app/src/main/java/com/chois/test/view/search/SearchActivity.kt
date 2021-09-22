@@ -98,7 +98,7 @@ class SearchActivity : AppCompatActivity() {
         }
     }
 
-    fun initObserve(){
+    private fun initObserve(){
         viewModel.getToastMsgEventLiveData().observe(this, EventObserver {
             showToast(it)
         })
