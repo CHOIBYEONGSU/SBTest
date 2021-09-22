@@ -2,7 +2,7 @@ package com.chois.test.view.booksearch
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.chois.spoontest.api.BookService
+import com.chois.test.api.BookService
 import com.chois.test.model.data.Search
 
 class BookSearchPagingSource(

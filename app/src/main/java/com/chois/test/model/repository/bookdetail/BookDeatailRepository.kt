@@ -1,6 +1,6 @@
 package com.chois.test.model.repository.bookdetail
 
-import com.chois.spoontest.api.BookService
+import com.chois.test.api.BookService
 import com.chois.test.model.data.Book
 import retrofit2.Response
 

@@ -1,4 +1,4 @@
-package com.chois.spoontest.api
+package com.chois.test.api
 
 import com.chois.test.global.Constants.Companion.SEARCH_NETWORK_CONNECT_TIME_OUT
 import com.chois.test.global.Constants.Companion.SEARCH_NETWORK_READ_TIME_OUT

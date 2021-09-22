@@ -1,4 +1,4 @@
-package com.chois.spoontest.api
+package com.chois.test.api
 
 import com.chois.test.model.data.Book
 import com.chois.test.model.data.SearchResponse
