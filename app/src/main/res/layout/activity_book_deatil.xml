@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="book"
+            type="com.chois.test.model.data.Book" />
+
+        <variable
+            name="viewmodel"
+            type="com.chois.test.viewmodel.bookdetail.BookDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                tools:context=".view.bookdetail.BookDeatilActivity">
+
+                <ImageView
+                    android:id="@+id/book_detail_image_imageview"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginBottom="10dp"
+                    app:highImageUrl="@{book.image}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/book_detail_isbn_constraintlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_image_imageview">
+
+                    <TextView
+                        android:id="@+id/book_detail_isbn13_textview"
+                        style="@style/BookDetailIsbnTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{book.isbn13}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/book_detail_isbn10_textview"
+                        style="@style/BookDetailIsbnTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="@{book.isbn10}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/book_detail_isbn13_textview"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/book_detail_title_textview"
+                    style="@style/BookDetailTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@{book.title}"
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_isbn_constraintlayout" />
+
+
+                <TextView
+                    android:id="@+id/book_detail_subtitle_textview"
+                    style="@style/BookDetailSubTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@{book.subtitle}"
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_title_textview" />
+
+                <TextView
+                    android:id="@+id/book_detail_authors_textview"
+                    style="@style/BookDetailAuthorsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@{book.authors}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_subtitle_textview" />
+
+                <TextView
+                    android:id="@+id/book_detail_publisher_textview"
+                    style="@style/BookDetailAuthorsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{book.publisher}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_authors_textview" />
+
+                <TextView
+                    android:id="@+id/book_detail_language_textview"
+                    style="@style/BookDetailAuthorsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{book.language}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_publisher_textview" />
+
+                <TextView
+                    android:id="@+id/book_detail_pages_textview"
+                    style="@style/BookDetailPageTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text='@{book.pages == null ? "" : book.pages + @string/page}'
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_language_textview" />
+
+                <TextView
+                    android:id="@+id/book_detail_year_textview"
+                    style="@style/BookDetailYearTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{book.year == null ? "" : book.year + @string/year}'
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_pages_textview" />
+
+                <TextView
+                    android:id="@+id/book_detail_rating_textview"
+                    style="@style/BookDetailRatingTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text='@{book.rating == null ? "" : @string/rating + book.rating}'
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_year_textview" />
+
+                <TextView
+                    android:id="@+id/book_detail_desc_textview"
+                    style="@style/BookDetailDescTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{book.desc}"
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_rating_textview" />
+
+                <TextView
+                    android:id="@+id/book_detail_price_textview"
+                    style="@style/BookDetailPriceTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@{book.price}"
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_desc_textview" />
+
+                <TextView
+                    android:id="@+id/book_detail_link_textview"
+                    style="@style/BookDetailLinkTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:autoLink="web"
+                    android:text="@{book.url}"
+                    app:layout_constraintTop_toBottomOf="@+id/book_detail_price_textview" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+        <ProgressBar
+            android:id="@+id/book_detail_load_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/book_detail_error_constraintlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/book_detail_error_textview"
+                style="@style/ErrorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/error_msg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/RetryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->viewmodel.getBookDetailData()}"
+                android:text="@string/retry"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/book_detail_error_textview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

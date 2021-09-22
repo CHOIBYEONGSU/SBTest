@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sendbird Test</string>
+    <string name="search">검색</string>
+    <string name="search_edittext_hint">검색할 내용을 입력해주세요.</string>
+    <string name="search_empty_text">결과를 찾을 수 없습니다.</string>
+    <string name="search_query_error_msg">올바르지 않은 검색 방법입니다.</string>
+    <string name="error_msg">오류가 발생하였습니다.</string>
+    <string name="page">&#160;페이지</string>
+    <string name="year">년</string>
+    <string name="rating">평점:&#160;</string>
+    <string name="retry">다시시도</string>
+</resources>

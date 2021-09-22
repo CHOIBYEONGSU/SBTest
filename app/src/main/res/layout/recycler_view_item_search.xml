@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="search"
+            type="com.chois.test.model.data.Search" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/search_item_imageview"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            app:lowImageUrl="@{search.image}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/search_item_text_constraintlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/search_item_imageview"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/search_item_id_textview"
+                style="@style/SearchItemIdTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{search.isbn13}"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/search_item_title_textview"
+                style="@style/SearchItemTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{search.title}"
+                app:layout_constraintTop_toBottomOf="@+id/search_item_id_textview" />
+
+            <TextView
+                android:id="@+id/search_item_subtitle_textview"
+                style="@style/SearchItemSubTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{search.subtitle}"
+                app:layout_constraintTop_toBottomOf="@+id/search_item_title_textview" />
+
+            <TextView
+                android:id="@+id/search_item_price_textview"
+                style="@style/SearchItemPriceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{search.price}"
+                app:layout_constraintTop_toBottomOf="@+id/search_item_subtitle_textview" />
+
+            <TextView
+                android:id="@+id/search_item_link_textview"
+                style="@style/SearchItemLinkTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:autoLink="web"
+                android:text="@{search.url}"
+                app:layout_constraintTop_toBottomOf="@+id/search_item_price_textview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
