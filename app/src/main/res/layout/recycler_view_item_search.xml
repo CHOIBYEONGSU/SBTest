@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -19,9 +18,9 @@
             android:layout_width="140dp"
             android:layout_height="180dp"
             android:scaleType="centerCrop"
-            app:lowImageUrl="@{search.image}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:lowImageUrl="@{search.image}" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/search_item_text_constraintlayout"
@@ -78,7 +77,5 @@
                 app:layout_constraintTop_toBottomOf="@+id/search_item_price_textview" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
