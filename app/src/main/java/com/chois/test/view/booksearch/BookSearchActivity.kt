@@ -1,4 +1,4 @@
-package com.chois.test.view.search
+package com.chois.test.view.booksearch
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,32 +13,32 @@ import androidx.paging.LoadState
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.chois.test.R
-import com.chois.test.databinding.ActivitySearchBinding
+import com.chois.test.databinding.ActivityBookSearchBinding
 import com.chois.test.global.EventObserver
 import com.chois.test.global.hideKeyboard
 import com.chois.test.global.showToast
 import com.chois.test.model.data.Search
 import com.chois.test.view.bookdetail.BookDeatilActivity
-import com.chois.test.viewmodel.search.SearchViewModel
-import com.chois.test.viewmodel.search.SearchViewModelFactory
+import com.chois.test.viewmodel.booksearch.BookSearchViewModel
+import com.chois.test.viewmodel.booksearch.BookSearchViewModelFactory
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 
-class SearchActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySearchBinding
-    private lateinit var viewModel: SearchViewModel
-    private lateinit var pagingAdapter: SearchAdapter
+class BookSearchActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityBookSearchBinding
+    private lateinit var viewModel: BookSearchViewModel
+    private lateinit var pagingAdapter: BookSearchAdapter
     private var searchJob: Job? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_search)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_book_search)
         binding.activity = this
-        viewModel = ViewModelProvider(this, SearchViewModelFactory(application))
-            .get(SearchViewModel::class.java)
+        viewModel = ViewModelProvider(this, BookSearchViewModelFactory(application))
+            .get(BookSearchViewModel::class.java)
 
         initRecyclerView()
         initObserve()
@@ -46,10 +46,10 @@ class SearchActivity : AppCompatActivity() {
 
     private fun initRecyclerView(){
 
-        pagingAdapter = SearchAdapter(object : SearchAdapter.OnItemClickListener {
+        pagingAdapter = BookSearchAdapter(object : BookSearchAdapter.OnItemClickListener {
             override fun onItemClick(search: Search?) {
                 if (search != null) {
-                    val intent = Intent(this@SearchActivity, BookDeatilActivity::class.java)
+                    val intent = Intent(this@BookSearchActivity, BookDeatilActivity::class.java)
                     intent.putExtra("isbn13", search.isbn13)
                     startActivity(intent)
                 }

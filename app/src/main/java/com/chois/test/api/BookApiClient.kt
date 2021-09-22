@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class ApiClient {
+class BookApiClient {
     var okHttpClient: OkHttpClient = OkHttpClient.Builder()
         .connectTimeout(SEARCH_NETWORK_CONNECT_TIME_OUT, TimeUnit.MINUTES)
         .readTimeout(SEARCH_NETWORK_READ_TIME_OUT, TimeUnit.SECONDS)

@@ -1,19 +1,19 @@
-package com.chois.test.model.repository.search
+package com.chois.test.model.repository.booksearch
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.filter
-import com.chois.spoontest.api.SearchService
+import com.chois.spoontest.api.BookService
 import com.chois.test.global.Constants.Companion.SEARCH_PAGING_SIZE
 import com.chois.test.model.data.Search
-import com.chois.test.view.search.SearchPagingSource
+import com.chois.test.view.booksearch.BookSearchPagingSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.map
 
-class SearchRepository {
-    private val searchService = SearchService
+class BookSearchRepository {
+    private val searchService = BookService
 
     fun getSearchListDataByPaging(query: String): Flow<PagingData<Search>> {
         if (query.contains("-")) {
@@ -23,7 +23,7 @@ class SearchRepository {
             if (searchWord.isNotEmpty() && exceptWord.isNotEmpty()) {
                 return Pager(
                     config = PagingConfig(pageSize = SEARCH_PAGING_SIZE),
-                    pagingSourceFactory = { SearchPagingSource(searchService,
+                    pagingSourceFactory = { BookSearchPagingSource(searchService,
                         searchWord.split("|").toMutableList()
                     ) }
                 ).flow
@@ -41,7 +41,7 @@ class SearchRepository {
         } else {
             return Pager(
                 config = PagingConfig(pageSize = 10),
-                pagingSourceFactory = { SearchPagingSource(searchService,
+                pagingSourceFactory = { BookSearchPagingSource(searchService,
                     query.split("|").toMutableList()
                 ) }
             ).flow

@@ -1,4 +1,4 @@
-package com.chois.test.viewmodel.search
+package com.chois.test.viewmodel.booksearch
 
 import android.app.Application
 import androidx.lifecycle.LiveData
@@ -10,13 +10,13 @@ import androidx.paging.cachedIn
 import com.chois.test.R
 import com.chois.test.global.Event
 import com.chois.test.model.data.Search
-import com.chois.test.model.repository.search.SearchRepository
+import com.chois.test.model.repository.booksearch.BookSearchRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
 
-class SearchViewModel(var application: Application) : ViewModel() {
+class BookSearchViewModel(var application: Application) : ViewModel() {
 
-    private val searchRepository = SearchRepository()
+    private val searchRepository = BookSearchRepository()
 
     var queryString: String = ""
     private var searchResult: Flow<PagingData<Search>>? = null

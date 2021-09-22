@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".view.bookdetail.BookDeatilActivity"></activity>
-        <activity android:name=".view.search.SearchActivity">
+        <activity android:name=".view.booksearch.BookSearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

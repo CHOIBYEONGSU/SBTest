@@ -1,14 +1,14 @@
-package com.chois.test.view.search
+package com.chois.test.view.booksearch
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.chois.test.databinding.RecyclerViewItemSearchBinding
+import com.chois.test.databinding.RecyclerViewItemBookSearchBinding
 import com.chois.test.model.data.Search
 
-class SearchAdapter (private val listener : OnItemClickListener) : PagingDataAdapter<Search, SearchAdapter.SearchViewHolder>(diffCallback) {
+class BookSearchAdapter (private val listener : OnItemClickListener) : PagingDataAdapter<Search, BookSearchAdapter.SearchViewHolder>(diffCallback) {
     interface OnItemClickListener {
         fun onItemClick(search: Search?)
     }
@@ -24,7 +24,7 @@ class SearchAdapter (private val listener : OnItemClickListener) : PagingDataAda
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
-        val binding = RecyclerViewItemSearchBinding.inflate(
+        val binding = RecyclerViewItemBookSearchBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -39,7 +39,7 @@ class SearchAdapter (private val listener : OnItemClickListener) : PagingDataAda
         }
     }
 
-    class SearchViewHolder(private val binding: RecyclerViewItemSearchBinding) :
+    class SearchViewHolder(private val binding: RecyclerViewItemBookSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(search: Search) {
             binding.search = search

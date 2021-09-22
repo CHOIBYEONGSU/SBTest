@@ -1,12 +1,12 @@
-package com.chois.test.view.search
+package com.chois.test.view.booksearch
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.chois.spoontest.api.SearchService
+import com.chois.spoontest.api.BookService
 import com.chois.test.model.data.Search
 
-class SearchPagingSource(
-    private val searchService: SearchService,
+class BookSearchPagingSource(
+    private val searchService: BookService,
     private val query: MutableList<String>
 ) : PagingSource<Int, Search>() {
     override suspend fun load(

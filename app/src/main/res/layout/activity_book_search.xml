@@ -7,18 +7,18 @@
 
         <variable
             name="viewModel"
-            type="com.chois.test.viewmodel.search.SearchViewModel" />
+            type="com.chois.test.viewmodel.booksearch.BookSearchViewModel" />
 
         <variable
             name="activity"
-            type="com.chois.test.view.search.SearchActivity" />
+            type="com.chois.test.view.booksearch.BookSearchActivity" />
     </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.search.SearchActivity">
+        tools:context=".view.booksearch.BookSearchActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/search_search_constraintlayout"
