@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/rect_shape_gray.xml" value="0.1965" />
+        <entry key="app/src/main/res/drawable/rect_shape_white.xml" value="0.1965" />
         <entry key="app/src/main/res/layout/activity_book_deatil.xml" value="0.3023895263671875" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.3969039916992187" />
         <entry key="app/src/main/res/layout/recycler_view_item_search.xml" value="0.4244791666666667" />

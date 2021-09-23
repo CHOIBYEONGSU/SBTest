@@ -21,7 +21,7 @@ class BookSearchViewModel(var application: Application) : ViewModel() {
     var queryString: String = ""
     private var searchResult: Flow<PagingData<Search>>? = null
 
-    private val toastMsgEvenLiveData: MutableLiveData<Event<String>> =
+    private val toastMsgEventLiveData: MutableLiveData<Event<String>> =
         MutableLiveData<Event<String>>()
 
     fun initSearchBookData(): Flow<PagingData<Search>>? {
@@ -61,10 +61,10 @@ class BookSearchViewModel(var application: Application) : ViewModel() {
 
 
     private fun showToastMsg(msg: String) {
-        toastMsgEvenLiveData.postValue(Event(msg))
+        toastMsgEventLiveData.postValue(Event(msg))
     }
 
     fun getToastMsgEventLiveData(): LiveData<Event<String>> {
-        return toastMsgEvenLiveData
+        return toastMsgEventLiveData
     }
 }
